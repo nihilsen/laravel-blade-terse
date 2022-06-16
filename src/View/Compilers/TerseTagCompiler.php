@@ -10,11 +10,11 @@ class TerseTagCompiler extends ComponentTagCompiler
     /**
      * The regular expression pattern encoding the beginning of
      * a valid "terse" component tag.
-     * 
+     *
      * Examples:
      *     <x-foo.bar="qux"
      *     <x-foo.bar=`$qux`
-     * 
+     *
      * @var string
      */
     public const TERSE_TAG_PATTERN = "/
@@ -49,7 +49,7 @@ class TerseTagCompiler extends ComponentTagCompiler
      * with the terse attribute and value appended, then recompile
      * like normal blade components.
      *
-     * Examples: 
+     * Examples:
      *     <x-foo.bar="qux"  ~> <x-foo.bar bar="qux"
      *     <x-foo.bar=`$qux` ~> <x-foo.bar :bar="$qux"
      *
@@ -64,7 +64,7 @@ class TerseTagCompiler extends ComponentTagCompiler
             if (Str::startsWith($value, '`')) {
                 /**
                  * Convert backticks to quotes.
-                 * 
+                 *
                  * Use single or double quotes depending on
                  * which of either is not already present in
                  * the value string.

@@ -2,8 +2,8 @@
 
 namespace Nihilsen\LaravelBladeTerse\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Nihilsen\LaravelBladeTerse\LaravelBladeTerseServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
