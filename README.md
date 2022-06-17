@@ -1,6 +1,3 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # Extension for Laravel Blade allowing more concise syntax for components with a single, primary attribute
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/nihilsen/laravel-blade-terse.svg?style=flat-square)](https://packagist.org/packages/nihilsen/laravel-blade-terse)
@@ -8,15 +5,11 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/nihilsen/laravel-blade-terse/Check%20&%20fix%20styling?label=code%20style)](https://github.com/nihilsen/laravel-blade-terse/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/nihilsen/laravel-blade-terse.svg?style=flat-square)](https://packagist.org/packages/nihilsen/laravel-blade-terse)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This package extends the syntax for Blade components in your Laravel application, adding the possibility to include a single, primary attribute directly in the tag. This allows for a terser syntax, which is especially neat for simpler components that need some "main" attribute.
 
-## Support us
+The attribute will be made available on the component as a variable with the same name as the component.
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-blade-terse.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-blade-terse)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+To differentiate between static and bound attributes, the value may be enclosed in single quotes `'` or double quotes `"` for static attributes, and  backquotes `` ` `` for bound attributes.
 
 ## Installation
 
@@ -26,56 +19,15 @@ You can install the package via composer:
 composer require nihilsen/laravel-blade-terse
 ```
 
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="laravel-blade-terse-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-blade-terse-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-blade-terse-views"
-```
-
 ## Usage
 
-```php
-$laravelBladeTerse = new Nihilsen\LaravelBladeTerse();
-echo $laravelBladeTerse->echoPhrase('Hello, Nihilsen!');
+```blade
+{{-- <x-foo.bar bar="baz" /> --}}
+<x-foo.bar="baz" />
+
+{{-- <x-foobar :foobar="$qux" /> --}}
+<x-foobar=`$qux` />
 ```
-
-## Testing
-
-```bash
-composer test
-```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
